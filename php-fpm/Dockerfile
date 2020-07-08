@@ -778,7 +778,7 @@ ARG INSTALL_RDKAFKA=false
 
 RUN if [ ${INSTALL_RDKAFKA} = true ]; then \
     apt-get install -y librdkafka-dev && \
-    pecl install rdkafka && \
+    pecl install https://pecl.php.net/get/rdkafka-3.1.3.tgz && \
     docker-php-ext-enable rdkafka \
 ;fi
 

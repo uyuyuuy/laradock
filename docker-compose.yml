@@ -147,6 +147,7 @@ services:
           - INSTALL_FFMPEG=${WORKSPACE_INSTALL_FFMPEG}
           - INSTALL_WKHTMLTOPDF=${WORKSPACE_INSTALL_WKHTMLTOPDF}
           - INSTALL_GNU_PARALLEL=${WORKSPACE_INSTALL_GNU_PARALLEL}
+          - INSTALL_RDKAFKA=${WORKSPACE_INSTALL_RDKAFKA}
           - http_proxy
           - https_proxy
           - no_proxy

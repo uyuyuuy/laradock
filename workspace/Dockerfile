@@ -506,6 +506,23 @@ RUN if [ ${INSTALL_GEARMAN} = true ]; then \
     apt-get install php-gearman -y  \
 ;fi
 
+
+
+###########################################################################
+# RDKAFKA:
+###########################################################################
+
+ARG INSTALL_RDKAFKA=false
+
+RUN if [ ${INSTALL_RDKAFKA} = true ]; then \
+    apt-get update -yqq && \
+    apt-get install -yqq librdkafka-dev && \
+    pecl install https://pecl.php.net/get/rdkafka-3.1.3.tgz && \
+    echo "extension=rdkafka.so" >> /etc/php/${LARADOCK_PHP_VERSION}/cli/php.ini \
+;fi
+
+
+
 ###########################################################################
 # PHP REDIS EXTENSION
 ###########################################################################
